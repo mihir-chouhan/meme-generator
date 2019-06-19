@@ -48,9 +48,11 @@ class MemeGenerator extends React.Component {
   }
 
   handleDownload() {
-    document
-      .getElementById("download-meme-image")
-      .setAttribute("href", this.state.downloadImg);
+    this.state.downloadImg === ""
+      ? document.getElementById("download-meme-image").setAttribute("href", "#")
+      : document
+          .getElementById("download-meme-image")
+          .setAttribute("href", this.state.downloadImg);
   }
 
   takeScreenShot = function() {
